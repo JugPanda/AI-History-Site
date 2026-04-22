@@ -132,7 +132,16 @@ const timelineList = document.getElementById('timeline-list');
 const eraNav = document.getElementById('era-nav');
 const galleryGrid = document.getElementById('gallery-grid');
 const modeButtons = document.querySelectorAll('.toggle-button');
+const heroAudioToggle = document.getElementById('hero-audio-toggle');
+const heroAudioNote = document.getElementById('hero-audio-note');
+const HERO_VIDEO_ID = 'cHuqhQmc4ok';
+const HERO_CLIP_START = 270;
+const HERO_CLIP_END = 310;
 let currentMode = 'beginner';
+let heroPlayer;
+let heroPlayerReady = false;
+let heroAudioPlaying = false;
+let heroLoopInterval;
 
 function renderTimeline(mode = currentMode) {
   if (!timelineList) return;
@@ -185,6 +194,99 @@ function renderGallery() {
   `).join('');
 }
 
+function updateHeroAudioUI() {
+  if (!heroAudioToggle) return;
+  heroAudioToggle.textContent = heroAudioPlaying ? '❚❚ Pause clip audio' : '▶ Play clip audio';
+  heroAudioToggle.setAttribute('aria-pressed', String(heroAudioPlaying));
+  heroAudioToggle.classList.toggle('is-playing', heroAudioPlaying);
+  if (heroAudioNote) {
+    heroAudioNote.textContent = heroAudioPlaying
+      ? 'Hero audio is on. Tap again to pause it.'
+      : 'Browsers block auto-playing sound, so the clip starts muted until you tap play.';
+  }
+}
+
+function keepHeroClipLooping() {
+  if (!heroPlayerReady || !heroPlayer || !heroAudioPlaying) return;
+
+  window.clearInterval(heroLoopInterval);
+  heroLoopInterval = window.setInterval(() => {
+    const currentTime = heroPlayer.getCurrentTime?.();
+    if (typeof currentTime === 'number' && currentTime >= HERO_CLIP_END - 0.35) {
+      heroPlayer.seekTo(HERO_CLIP_START, true);
+      heroPlayer.playVideo();
+    }
+  }, 500);
+}
+
+function stopHeroLooping() {
+  window.clearInterval(heroLoopInterval);
+}
+
+function playHeroAudio() {
+  if (!heroPlayerReady || !heroPlayer) {
+    return;
+  }
+
+  heroPlayer.unMute();
+  heroPlayer.setVolume?.(75);
+  heroPlayer.seekTo(HERO_CLIP_START, true);
+  heroPlayer.playVideo();
+  heroAudioPlaying = true;
+  keepHeroClipLooping();
+  updateHeroAudioUI();
+}
+
+function pauseHeroAudio() {
+  if (!heroPlayerReady || !heroPlayer) {
+    return;
+  }
+
+  heroPlayer.pauseVideo();
+  heroPlayer.mute();
+  heroAudioPlaying = false;
+  stopHeroLooping();
+  updateHeroAudioUI();
+}
+
+function fallbackHeroAudioControl() {
+  const iframe = document.getElementById('hero-player');
+  if (!iframe) return;
+
+  const nextMuted = heroAudioPlaying ? '1' : '0';
+  iframe.src = `https://www.youtube-nocookie.com/embed/${HERO_VIDEO_ID}?autoplay=1&mute=${nextMuted}&controls=0&loop=1&playlist=${HERO_VIDEO_ID}&start=${HERO_CLIP_START}&end=${HERO_CLIP_END}&playsinline=1&rel=0&modestbranding=1&enablejsapi=1`;
+  heroAudioPlaying = !heroAudioPlaying;
+  updateHeroAudioUI();
+}
+
+function onHeroPlayerReady(event) {
+  heroPlayerReady = true;
+  event.target.mute();
+  updateHeroAudioUI();
+}
+
+function onHeroPlayerStateChange(event) {
+  if (!window.YT || event.data !== window.YT.PlayerState.ENDED || !heroAudioPlaying) return;
+  heroPlayer.seekTo(HERO_CLIP_START, true);
+  heroPlayer.playVideo();
+}
+
+function loadHeroPlayerAPI() {
+  if (!document.getElementById('hero-player')) return;
+  const tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+}
+
+window.onYouTubeIframeAPIReady = function onYouTubeIframeAPIReady() {
+  heroPlayer = new window.YT.Player('hero-player', {
+    events: {
+      onReady: onHeroPlayerReady,
+      onStateChange: onHeroPlayerStateChange,
+    },
+  });
+};
+
 modeButtons.forEach(button => {
   button.addEventListener('click', () => {
     currentMode = button.dataset.mode || 'beginner';
@@ -197,6 +299,21 @@ modeButtons.forEach(button => {
   });
 });
 
+heroAudioToggle?.addEventListener('click', () => {
+  if (!heroPlayerReady) {
+    fallbackHeroAudioControl();
+    return;
+  }
+
+  if (heroAudioPlaying) {
+    pauseHeroAudio();
+  } else {
+    playHeroAudio();
+  }
+});
+
 renderTimeline();
 renderEraNav();
 renderGallery();
+updateHeroAudioUI();
+loadHeroPlayerAPI();

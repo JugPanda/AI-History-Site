@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./styles.css?v=audio1" />
 </head>
 <body>
   <div class="page-shell">
@@ -36,7 +36,7 @@
         <div class="hero-video-wrap" aria-hidden="true">
           <iframe
             id="hero-player"
-            src="https://www.youtube-nocookie.com/embed/cHuqhQmc4ok?autoplay=1&mute=1&controls=0&loop=1&playlist=cHuqhQmc4ok&start=270&end=310&playsinline=1&rel=0&modestbranding=1"
+            src="https://www.youtube-nocookie.com/embed/cHuqhQmc4ok?autoplay=1&mute=1&controls=0&loop=1&playlist=cHuqhQmc4ok&start=270&end=310&playsinline=1&rel=0&modestbranding=1&enablejsapi=1"
             title="AI history hero background"
             frameborder="0"
             allow="autoplay; encrypted-media; picture-in-picture"
@@ -46,6 +46,11 @@
           <div class="hero-video-fallback"></div>
         </div>
         <div class="hero-overlay"></div>
+
+        <button id="hero-audio-toggle" class="hero-audio-toggle" type="button" aria-pressed="false">
+          ▶ Play clip audio
+        </button>
+        <p id="hero-audio-note" class="hero-audio-note">Browsers block auto-playing sound, so the clip starts muted until you tap play.</p>
 
         <div class="hero-content">
           <div class="hero-topline">
@@ -277,6 +282,6 @@
     </main>
   </div>
 
-  <script src="./script.js"></script>
+  <script src="./script.js?v=audio1"></script>
 </body>
 </html>
