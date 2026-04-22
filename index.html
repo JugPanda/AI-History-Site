@@ -3,30 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The History of AI</title>
-  <meta name="description" content="A cinematic, beginner-friendly and technical tour through the history of artificial intelligence—from myths and logic machines to deep learning and large language models." />
-  <meta property="og:title" content="The History of AI" />
-  <meta property="og:description" content="A cinematic tour through the history of AI for curious newcomers and technical readers alike." />
+  <title>A Field Built in Six Rooms | The History of AI</title>
+  <meta name="description" content="An original editorial timeline of AI told through six rooms: mechanized thought, symbolic reasoning, expert systems, statistics, deep learning, and foundation models." />
+  <meta property="og:title" content="A Field Built in Six Rooms" />
+  <meta property="og:description" content="An original editorial timeline of AI for newcomers and technical readers." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./assets/og-image.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The History of AI" />
-  <meta name="twitter:description" content="A cinematic tour through the history of AI for curious newcomers and technical readers alike." />
+  <meta name="twitter:title" content="A Field Built in Six Rooms" />
+  <meta name="twitter:description" content="An original editorial timeline of AI for newcomers and technical readers." />
   <meta name="twitter:image" content="./assets/og-image.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=visual6" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css?v=rooms1" />
 </head>
 <body>
   <div class="page-shell">
     <header class="site-header">
-      <a class="brand" href="#hero">AI / HISTORY</a>
+      <a class="brand" href="#hero">AI / ROOMS</a>
       <nav>
+        <a href="#premise">Premise</a>
+        <a href="#rooms">Rooms</a>
         <a href="#timeline">Timeline</a>
-        <a href="#concepts">Concepts</a>
-        <a href="#turning-points">Turning Points</a>
-        <a href="#gallery">People & systems</a>
+        <a href="#vectors">Forces</a>
         <a href="#sources">Sources</a>
       </nav>
     </header>
@@ -48,336 +48,164 @@
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
-          <div class="hero-main-row">
-            <div class="hero-editorial-frame reveal">
-              <div class="hero-topline">
-                <p class="eyebrow">From ancient automata to large language models</p>
-                <span class="hero-pill">Built for newcomers + technical readers</span>
-              </div>
-              <h1>The history of AI, explained as a story of ideas, hype, winters, breakthroughs, and scale.</h1>
-              <p class="hero-copy">
-                AI did not appear overnight. It emerged through logic, statistics, neural networks, hardware breakthroughs,
-                funding crashes, and a long series of arguments about what intelligence actually is.
-              </p>
-              <div class="hero-audio-controls">
-                <button id="hero-audio-toggle" class="hero-audio-toggle" type="button" aria-pressed="false">
-                  🔊 Unmute clip
-                </button>
-                <p id="hero-audio-note" class="hero-audio-note">The hero video auto-plays muted. Tap to hear the clip.</p>
-              </div>
-              <div class="hero-actions">
-                <a class="button primary" href="#timeline">Explore the timeline</a>
-                <a class="button secondary" href="#concepts">Start with the basics</a>
-              </div>
+          <div class="hero-copy reveal">
+            <p class="eyebrow">An original way to explain the history of AI</p>
+            <h1>A field built in six rooms.</h1>
+            <p class="hero-text">
+              This version treats AI history like a curated exhibit: each room answers a different question,
+              each era has its own visual language, and the through-line is not hype. It is the long struggle to mechanize thought.
+            </p>
+            <div class="hero-audio-controls">
+              <button id="hero-audio-toggle" class="hero-audio-toggle" type="button" aria-pressed="false">🔊 Unmute clip</button>
+              <p id="hero-audio-note" class="hero-audio-note">The hero video auto-plays muted. Tap to hear the clip.</p>
             </div>
-
-            <aside class="hero-visual reveal" aria-hidden="true">
-              <div class="hero-visual-stack">
-                <div class="neural-orb">
-                  <span class="orb-ring orb-ring-a"></span>
-                  <span class="orb-ring orb-ring-b"></span>
-                  <span class="orb-ring orb-ring-c"></span>
-                  <span class="orb-core"></span>
-                </div>
-                <div class="floating-chip chip-a">1943 — neural model</div>
-                <div class="floating-chip chip-b">1956 — Dartmouth</div>
-                <div class="floating-chip chip-c">2012 — AlexNet</div>
-                <div class="floating-chip chip-d">2017 — Transformer</div>
-              </div>
-            </aside>
-          </div>
-
-          <div class="hero-stats reveal">
-            <article>
-              <span>8 eras</span>
-              <p>from myth and mechanism to foundation models</p>
-            </article>
-            <article>
-              <span>2 AI winters</span>
-              <p>when optimism outran reality and funding collapsed</p>
-            </article>
-            <article>
-              <span>3 paradigm shifts</span>
-              <p>rules → statistics → deep learning and transformers</p>
-            </article>
-          </div>
-
-          <div class="hero-meta">
-            <div>
-              <span class="meta-label">Why this page works for beginners</span>
-              <p>Every milestone has a plain-English explanation and a short “why it mattered” framing.</p>
-            </div>
-            <div>
-              <span class="meta-label">Why this page works for technical readers</span>
-              <p>Every milestone also includes the mechanism: search, probability, backprop, GPUs, transformers, and scaling.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#rooms">Enter the rooms</a>
+              <a class="button secondary" href="#timeline">See the full timeline</a>
             </div>
           </div>
+
+          <aside class="hero-stage reveal" aria-hidden="true">
+            <div class="hero-depth-grid">
+              <article class="depth-panel panel-a"><span>1837–1945</span><strong>Mechanizing thought</strong></article>
+              <article class="depth-panel panel-b"><span>1943–1969</span><strong>Brains, symbols, optimism</strong></article>
+              <article class="depth-panel panel-c"><span>1970–1993</span><strong>Rules, limits, winters</strong></article>
+              <article class="depth-panel panel-d"><span>1990–2011</span><strong>Statistics and scale</strong></article>
+              <article class="depth-panel panel-e"><span>2012–present</span><strong>Foundation models</strong></article>
+            </div>
+            <div class="hero-axis">
+              <span>logic</span>
+              <span>search</span>
+              <span>data</span>
+              <span>compute</span>
+              <span>interfaces</span>
+            </div>
+          </aside>
         </div>
       </section>
 
-      <section class="intro-grid">
-        <article class="panel panel-accent">
-          <span class="panel-kicker">New to AI?</span>
-          <h2>Start with three ideas.</h2>
-          <ol>
-            <li><strong>Symbolic AI</strong> tried to encode intelligence as rules and logic.</li>
-            <li><strong>Machine learning</strong> shifted the focus toward learning patterns from data.</li>
-            <li><strong>Modern generative AI</strong> combines massive compute, large datasets, and scalable architectures.</li>
-          </ol>
-        </article>
-        <article class="panel">
-          <span class="panel-kicker">Already technical?</span>
-          <h2>Watch the real inflection points.</h2>
-          <ul>
-            <li>Search + symbolic reasoning → early optimism</li>
-            <li>Perceptrons, backprop, and statistical learning → new representations</li>
-            <li>GPUs, transformers, and scaling laws → today’s model ecosystem</li>
-          </ul>
-        </article>
-      </section>
-
-      <section id="timeline" class="content-section">
-        <div class="section-heading">
-          <p class="eyebrow">The long arc</p>
-          <h2>Timeline of AI</h2>
+      <section id="premise" class="content-section intro-section reveal">
+        <div class="section-heading narrow">
+          <p class="eyebrow">Premise</p>
+          <h2>This history is organized by the questions researchers were trying to answer.</h2>
           <p>
-            This timeline is designed to answer two questions at once: <em>What happened?</em> and <em>Why did it change what was possible?</em>
+            That makes the story easier to follow than a giant list of dates. Each room below has a plain-English reading and a technical reading,
+            plus its own artifact or diagram so the page feels researched instead of decorative.
           </p>
         </div>
+        <div class="premise-grid">
+          <article class="premise-card">
+            <span class="premise-number">01</span>
+            <h3>Can thought be mechanized?</h3>
+            <p>Before computers, the important leap was conceptual: logic, notation, and programmable machinery.</p>
+          </article>
+          <article class="premise-card">
+            <span class="premise-number">02</span>
+            <h3>Can intelligence be formalized?</h3>
+            <p>Turing, McCulloch, Pitts, and Dartmouth turned philosophy into an actual research agenda.</p>
+          </article>
+          <article class="premise-card">
+            <span class="premise-number">03</span>
+            <h3>What kept changing the field?</h3>
+            <p>Not one magic idea. Repeated shifts in representation, data, hardware, and interfaces.</p>
+          </article>
+        </div>
+      </section>
 
+      <section id="rooms" class="content-section rooms-section">
+        <div class="section-heading">
+          <p class="eyebrow">Six rooms</p>
+          <h2>An AI timeline organized by paradigm shifts, not just dates</h2>
+          <p>Toggle between a newcomer explanation and a more technical one. The chapter structure follows the major questions, bottlenecks, and shifts that repeatedly changed the field.</p>
+        </div>
         <div class="timeline-controls">
           <div class="explainer-toggle" role="tablist" aria-label="Explanation depth">
-            <button class="toggle-button active" data-mode="beginner" aria-selected="true">Beginner view</button>
-            <button class="toggle-button" data-mode="technical" aria-selected="false">Technical view</button>
-          </div>
-          <div id="era-nav" class="era-nav" aria-label="Jump to an era"></div>
-        </div>
-
-        <div id="timeline-list" class="timeline-list"></div>
-      </section>
-
-      <section id="concepts" class="content-section concepts-section">
-        <div class="section-heading">
-          <p class="eyebrow">Helpful mental models</p>
-          <h2>Three big concepts that make AI history easier to understand</h2>
-        </div>
-        <div class="concept-grid">
-          <article class="panel">
-            <h3>1. AI has repeatedly switched paradigms</h3>
-            <p>
-              The field moved from hand-written logic and search, to expert systems, to probabilistic models,
-              to neural nets, to deep learning and transformers. Each wave solved different problems well—and hit different ceilings.
-            </p>
-          </article>
-          <article class="panel">
-            <h3>2. Progress depends on hardware and data, not just ideas</h3>
-            <p>
-              Better algorithms matter, but so do GPUs, memory bandwidth, datasets, and infrastructure. Many ideas became useful only when compute caught up.
-            </p>
-          </article>
-          <article class="panel">
-            <h3>3. AI winters happened when promises outran reality</h3>
-            <p>
-              The history of AI is not a straight line upward. Funding and public enthusiasm collapsed more than once when systems failed outside narrow demos.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="content-section visual-section">
-        <div class="section-heading">
-          <p class="eyebrow">A visual shortcut</p>
-          <h2>Three waves of AI development</h2>
-          <p>Not every detail fits in one chart, but this gets beginners oriented fast while still matching how technical readers often narrate the field.</p>
-        </div>
-        <div class="wave-chart panel">
-          <div class="wave-row">
-            <div class="wave-label">
-              <strong>Wave 1</strong>
-              <span>Rules & symbols</span>
-            </div>
-            <div class="wave-bar"><span style="width: 48%"></span></div>
-            <p>Strong on explicit logic and clean toy domains, weak in messy real-world situations.</p>
-          </div>
-          <div class="wave-row">
-            <div class="wave-label">
-              <strong>Wave 2</strong>
-              <span>Statistics & machine learning</span>
-            </div>
-            <div class="wave-bar"><span style="width: 72%"></span></div>
-            <p>Better pattern recognition and prediction by learning from data rather than encoding everything by hand.</p>
-          </div>
-          <div class="wave-row">
-            <div class="wave-label">
-              <strong>Wave 3</strong>
-              <span>Deep learning & foundation models</span>
-            </div>
-            <div class="wave-bar"><span style="width: 92%"></span></div>
-            <p>Massive gains from scale, GPUs, self-supervision, and transformer architectures that generalize across tasks.</p>
+            <button class="toggle-button active" data-mode="beginner" aria-selected="true">Newcomer reading</button>
+            <button class="toggle-button" data-mode="technical" aria-selected="false">Technical reading</button>
           </div>
         </div>
+        <div id="rooms-grid" class="rooms-grid"></div>
       </section>
 
-      <section id="turning-points" class="content-section turning-points">
-        <div class="section-heading">
-          <p class="eyebrow">Why today feels different</p>
-          <h2>Four turning points that changed the trajectory</h2>
+      <section id="timeline" class="content-section timeline-section reveal">
+        <div class="section-heading narrow">
+          <p class="eyebrow">Full timeline</p>
+          <h2>A compact linear history of AI</h2>
+          <p>This rail is here for scanning. The rooms above are where the explanation lives.</p>
         </div>
-        <div class="turning-grid">
-          <article class="panel panel-dark">
-            <span class="turning-year">1956</span>
-            <h3>Dartmouth gave the field a name</h3>
-            <p>The field became legible. Once “artificial intelligence” existed as a shared project, funding, research agendas, and public expectations followed.</p>
-          </article>
-          <article class="panel panel-dark">
-            <span class="turning-year">1986</span>
-            <h3>Backpropagation made layered learning practical</h3>
-            <p>Neural networks stopped being just an appealing metaphor and became trainable systems with a credible path to useful representation learning.</p>
-          </article>
-          <article class="panel panel-dark">
-            <span class="turning-year">2012</span>
-            <h3>Deep learning won on modern hardware</h3>
-            <p>AlexNet showed what happens when large neural nets, abundant data, and GPU acceleration align at the same moment.</p>
-          </article>
-          <article class="panel panel-dark">
-            <span class="turning-year">2017–present</span>
-            <h3>Transformers scaled to general-purpose systems</h3>
-            <p>Large language models pushed AI from narrow-task tools toward flexible systems that can write, classify, reason, summarize, and act across interfaces.</p>
-          </article>
-        </div>
+        <div id="timeline-rail" class="timeline-rail"></div>
       </section>
 
-      <section class="content-section artifacts-section">
-        <div class="section-heading section-heading-wide reveal">
-          <p class="eyebrow">Archival visuals</p>
-          <h2>Faces, artifacts, and diagrams that made AI history feel real</h2>
-          <p>Instead of generic AI stock art, this section uses source-driven visuals tied to actual people, systems, and technical turning points. The cards tilt in subtle 3D on hover to make the archive feel more physical without becoming gimmicky.</p>
+      <section id="vectors" class="content-section vectors-section reveal">
+        <div class="section-heading narrow">
+          <p class="eyebrow">What actually moved the field</p>
+          <h2>Four forces that kept reappearing in every era</h2>
         </div>
-        <div class="artifact-grid">
-          <article class="artifact-card tilt-card reveal">
-            <div class="artifact-media"><img src="./assets/history/alan-turing.jpg" alt="Portrait of Alan Turing" loading="lazy" /></div>
-            <div class="artifact-copy">
-              <span class="artifact-year">1950</span>
-              <h3>Turing made machine intelligence legible</h3>
-              <p>Before AI became a field, Turing gave people a concrete way to debate whether a machine could appear intelligent.</p>
-            </div>
+        <div class="vector-grid">
+          <article class="vector-card">
+            <span>Algorithms</span>
+            <h3>New representations changed what problems were learnable.</h3>
+            <p>Logic, perceptrons, backpropagation, convolution, attention, and self-supervision each changed the game differently.</p>
           </article>
-          <article class="artifact-card tilt-card reveal">
-            <div class="artifact-media"><img src="./assets/history/john-mccarthy.jpg" alt="Portrait of John McCarthy" loading="lazy" /></div>
-            <div class="artifact-copy">
-              <span class="artifact-year">1956</span>
-              <h3>Dartmouth and the naming of the field</h3>
-              <p>John McCarthy helped turn a loose set of ideas into a recognizable academic project with its own ambitions and identity.</p>
-            </div>
+          <article class="vector-card">
+            <span>Compute</span>
+            <h3>Hardware turned old ideas into practical systems.</h3>
+            <p>Many ideas existed years before they mattered. Better hardware let them finally work at useful scale.</p>
           </article>
-          <article class="artifact-card tilt-card reveal">
-            <div class="artifact-media"><img src="./assets/history/frank-rosenblatt.jpg" alt="Portrait of Frank Rosenblatt" loading="lazy" /></div>
-            <div class="artifact-copy">
-              <span class="artifact-year">1958</span>
-              <h3>The perceptron era made learning feel possible</h3>
-              <p>Rosenblatt’s work suggested machines might not only follow rules, but adjust themselves from experience.</p>
-            </div>
+          <article class="vector-card">
+            <span>Data</span>
+            <h3>Benchmarks and corpora made progress visible.</h3>
+            <p>From expert-crafted rules to giant scraped datasets, the field kept moving toward learnable structure in data.</p>
           </article>
-          <article class="artifact-card tilt-card reveal">
-            <div class="artifact-media"><img src="./assets/history/eliza.png" alt="Screenshot of an ELIZA conversation" loading="lazy" /></div>
-            <div class="artifact-copy">
-              <span class="artifact-year">1960s</span>
-              <h3>ELIZA previewed the social side of AI</h3>
-              <p>Even simple text systems could make humans project intelligence, empathy, and intention onto software.</p>
-            </div>
-          </article>
-          <article class="artifact-card tilt-card reveal">
-            <div class="artifact-media"><img src="./assets/history/deep-blue.jpg" alt="IBM Deep Blue chess computer" loading="lazy" /></div>
-            <div class="artifact-copy">
-              <span class="artifact-year">1997</span>
-              <h3>Deep Blue turned symbolic power into spectacle</h3>
-              <p>The Kasparov match made AI feel public, competitive, and historically consequential rather than merely academic.</p>
-            </div>
-          </article>
-          <article class="artifact-card tilt-card reveal">
-            <div class="artifact-media"><img src="./assets/history/lee-sedol.jpg" alt="Go champion Lee Sedol" loading="lazy" /></div>
-            <div class="artifact-copy">
-              <span class="artifact-year">2016</span>
-              <h3>AlphaGo changed the emotional temperature</h3>
-              <p>The Lee Sedol match made many people feel that AI had crossed from narrow competence into something more uncanny.</p>
-            </div>
-          </article>
-          <article class="artifact-card tilt-card reveal wide-artifact">
-            <div class="artifact-media"><img src="./assets/history/transformer.png" alt="Transformer architecture diagram" loading="lazy" /></div>
-            <div class="artifact-copy">
-              <span class="artifact-year">2017</span>
-              <h3>The transformer diagram became the blueprint for the foundation-model era</h3>
-              <p>More than a research figure, this architecture diagram marks the moment sequence modeling, attention, and scale began reshaping the entire field.</p>
-            </div>
+          <article class="vector-card">
+            <span>Interfaces</span>
+            <h3>People care when AI changes the surface of work.</h3>
+            <p>ELIZA, Deep Blue, Watson, ChatGPT, and Copilot mattered because the public could feel the shift directly.</p>
           </article>
         </div>
       </section>
 
-      <section id="gallery" class="content-section gallery-section">
-        <div class="section-heading">
-          <p class="eyebrow">People, systems, and symbols</p>
-          <h2>Iconic moments that anchor the timeline</h2>
-          <p>Instead of dropping in random decorative art, this section gives viewers a compact cast of names and systems that frequently show up in AI history.</p>
+      <section class="content-section artifacts-section reveal">
+        <div class="section-heading narrow">
+          <p class="eyebrow">Original visuals</p>
+          <h2>Custom diagrams and sourced artifacts give each era its own texture</h2>
+          <p>The wall mixes sourced archival photos with original diagrams for later eras, so the page feels grounded without borrowing another site’s visual system.</p>
         </div>
-        <div id="gallery-grid" class="gallery-grid"></div>
+        <div id="artifact-wall" class="artifact-wall"></div>
       </section>
 
-      <section class="content-section audience-section">
-        <div class="section-heading">
-          <p class="eyebrow">Read the field through two lenses</p>
-          <h2>What a newcomer should notice vs. what a technical reader should notice</h2>
-        </div>
-        <div class="audience-grid">
-          <article class="panel">
-            <h3>For new viewers</h3>
-            <ul>
-              <li>AI is older than most people think.</li>
-              <li>There was never one single path to “intelligence.”</li>
-              <li>The field repeatedly overpromised and then rebuilt itself.</li>
-              <li>Today’s tools feel magical partly because older failures taught the field what not to do.</li>
-            </ul>
-          </article>
-          <article class="panel">
-            <h3>For technical readers</h3>
-            <ul>
-              <li>Representation learning beat brittle feature engineering in many domains.</li>
-              <li>Benchmarks, data scale, and accelerator economics are as important as architectures.</li>
-              <li>Paradigm shifts often came from combining old ideas with newly affordable compute.</li>
-              <li>Modern progress still inherits open problems from earlier eras: grounding, robustness, reasoning, and alignment.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="sources" class="content-section sources-section">
-        <div class="section-heading section-heading-wide">
+      <section id="sources" class="content-section sources-section reveal">
+        <div class="section-heading narrow">
           <p class="eyebrow">Sources</p>
-          <h2>Public reading list for the history behind this page</h2>
-          <p>This section now shows only history and reference material used to frame the explainer. Implementation docs for the site itself are not part of the public bibliography.</p>
+          <h2>Research and visual grounding</h2>
+          <p>These links informed the timeline structure and helped keep the page from drifting into generic AI aesthetics.</p>
         </div>
-        <div class="source-list panel reveal">
-          <a href="https://www.ibm.com/think/topics/history-of-artificial-intelligence" target="_blank" rel="noreferrer">
-            <strong>IBM — The history of artificial intelligence</strong>
-            <span>A broad era-by-era overview that helped shape the chronological framing.</span>
-          </a>
-          <a href="https://plato.stanford.edu/entries/artificial-intelligence/" target="_blank" rel="noreferrer">
-            <strong>Stanford Encyclopedia of Philosophy — Artificial Intelligence</strong>
-            <span>Useful for historical context, philosophical framing, and the Dartmouth-era foundations.</span>
-          </a>
-          <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noreferrer">
-            <strong>Britannica — Artificial intelligence</strong>
-            <span>A concise reference source for major movements, milestones, and definitions.</span>
-          </a>
-          <a href="https://en.wikipedia.org/wiki/History_of_artificial_intelligence" target="_blank" rel="noreferrer">
-            <strong>Wikipedia — History of artificial intelligence</strong>
-            <span>Used as a cross-checking timeline reference across key dates, winters, and paradigm shifts.</span>
-          </a>
+        <div class="sources-grid">
+          <article class="source-card">
+            <h3>Primary and institutional sources</h3>
+            <ul>
+              <li><a href="https://academic.oup.com/mind/article/LIX/236/433/986238" target="_blank" rel="noreferrer">Alan Turing — “Computing Machinery and Intelligence”</a></li>
+              <li><a href="https://home.dartmouth.edu/about/artificial-intelligence-ai-coined-dartmouth" target="_blank" rel="noreferrer">Dartmouth on the 1956 AI workshop</a></li>
+              <li><a href="https://proceedings.neurips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html" target="_blank" rel="noreferrer">AlexNet / NeurIPS 2012</a></li>
+              <li><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noreferrer">Attention Is All You Need</a></li>
+              <li><a href="https://www.ibm.com/history/deep-blue" target="_blank" rel="noreferrer">IBM Deep Blue history</a></li>
+            </ul>
+          </article>
+          <article class="source-card">
+            <h3>Visual/archive references</h3>
+            <ul>
+              <li><a href="https://commons.wikimedia.org/wiki/Category:Ada_Lovelace" target="_blank" rel="noreferrer">Wikimedia Commons — Ada Lovelace</a></li>
+              <li><a href="https://commons.wikimedia.org/wiki/Category:Charles_Babbage" target="_blank" rel="noreferrer">Wikimedia Commons — Charles Babbage</a></li>
+              <li><a href="https://commons.wikimedia.org/wiki/Category:Shakey_the_robot" target="_blank" rel="noreferrer">Wikimedia Commons — Shakey the Robot</a></li>
+              <li><a href="https://www.loc.gov/collections/selected-letters-of-charles-babbage/about-this-collection/" target="_blank" rel="noreferrer">Library of Congress — Charles Babbage collection</a></li>
+              <li><a href="https://archive.org/" target="_blank" rel="noreferrer">Internet Archive</a></li>
+            </ul>
+          </article>
         </div>
-        <p class="visual-credits reveal">Visuals in the archival section are sourced from Wikimedia Commons / Wikipedia pages for Alan Turing, John McCarthy, Frank Rosenblatt, ELIZA, Deep Blue, Lee Sedol, and the transformer architecture.</p>
       </section>
     </main>
   </div>
 
-  <script src="./script.js?v=visual6"></script>
+  <script src="./script.js?v=rooms1"></script>
 </body>
 </html>

@@ -1,0 +1,24 @@
+<svg width="1200" height="780" viewBox="0 0 1200 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="780" rx="40" fill="#0F0D15"/>
+  <rect x="52" y="52" width="1096" height="676" rx="32" fill="#151221" stroke="#302848"/>
+  <rect x="96" y="126" width="290" height="520" rx="28" fill="#100F19" stroke="#2C2840"/>
+  <circle cx="242" cy="198" r="18" fill="#9F94FF"/>
+  <circle cx="164" cy="278" r="18" fill="#C7C1FF"/>
+  <circle cx="320" cy="278" r="18" fill="#C7C1FF"/>
+  <circle cx="126" cy="374" r="18" fill="#E6E2FF"/>
+  <circle cx="242" cy="374" r="18" fill="#E6E2FF"/>
+  <circle cx="358" cy="374" r="18" fill="#E6E2FF"/>
+  <path d="M242 198L164 278M242 198L320 278M164 278L126 374M164 278L242 374M320 278L242 374M320 278L358 374" stroke="#9F94FF" stroke-width="7" stroke-linecap="round"/>
+  <rect x="448" y="142" width="274" height="224" rx="22" fill="#120F1B" stroke="#332C4B"/>
+  <text x="488" y="188" fill="#9F94FF" font-family="Inter, Arial" font-size="18" letter-spacing="4">ELIZA</text>
+  <text x="488" y="240" fill="#F7F4EE" font-family="Inter, Arial" font-size="24">Tell me about your mother.</text>
+  <text x="488" y="286" fill="#D4CEE8" font-family="Inter, Arial" font-size="22">Why do you say my mother?</text>
+  <rect x="448" y="420" width="654" height="180" rx="28" fill="#120F1B" stroke="#332C4B"/>
+  <path d="M514 530L622 470L732 522L864 442L1036 490" stroke="#9F94FF" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="514" cy="530" r="12" fill="#F7F4EE"/>
+  <circle cx="622" cy="470" r="12" fill="#F7F4EE"/>
+  <circle cx="732" cy="522" r="12" fill="#F7F4EE"/>
+  <circle cx="864" cy="442" r="12" fill="#F7F4EE"/>
+  <circle cx="1036" cy="490" r="12" fill="#F7F4EE"/>
+  <text x="490" y="580" fill="#D4CEE8" font-family="Inter, Arial" font-size="18">Search, language play, and planning looked promising inside narrow worlds.</text>
+</svg>

@@ -1,136 +1,170 @@
-const timelineData = [
+const roomsData = [
   {
-    id: 'myth-mechanism',
-    icon: '⚙️',
-    era: 'Myth & Mechanism',
-    years: 'Antiquity → 1930s',
-    title: 'Humans imagined intelligent machines long before computers existed',
-    summary: 'Ancient myths, automata, formal logic, and mechanical calculators created the cultural and mathematical preconditions for AI. The dream came first; the machinery came later.',
-    beginner: 'People were already asking whether thought could be recreated with artifacts. That question is the emotional origin of AI.',
-    technical: 'Formal logic, symbolic representation, and programmable mechanical systems laid the foundation for later computational models of reasoning.',
-    tags: ['myth', 'logic', 'automata']
+    id: 'room-1',
+    accent: 'gold',
+    years: '1837–1945',
+    eyebrow: 'Room 1',
+    question: 'Can thought be mechanized?',
+    title: 'Before AI had a name, thinkers were already building the idea-space for it.',
+    summary: 'The roots of AI are older than electronic computers. Programmable machinery, symbolic notation, and formal logic made it possible to imagine intelligence as something that could be represented and executed.',
+    beginner: 'This room matters because AI starts as a human idea before it becomes a machine reality. The key leap was believing reasoning could be expressed in symbols and procedures.',
+    technical: 'Babbage, Lovelace, and later Turing helped establish the abstraction stack AI still relies on: symbolic representation, programmable procedure, and formal models of computation.',
+    image: './assets/rooms/mechanized-thought.svg',
+    imageAlt: 'Original illustration of gears, notation, and punched instructions representing mechanized thought.',
+    imageLabel: 'Original vector artifact',
+    milestones: [
+      { year: '1837', title: 'Analytical Engine', note: 'Babbage proposed a general programmable machine, long before modern computers.' },
+      { year: '1843', title: 'Lovelace notes', note: 'Ada Lovelace described symbolic computation beyond mere arithmetic.' },
+      { year: '1936', title: 'Turing machine', note: 'A formal model of computation made the question of machine intelligence more concrete.' }
+    ]
   },
   {
-    id: 'birth-of-ai',
-    icon: '🧠',
-    era: 'Birth of the field',
-    years: '1940s → 1956',
-    title: 'Turing, cybernetics, and Dartmouth turned speculation into a research program',
-    summary: 'The modern field took shape through wartime computing, Turing’s work on machine intelligence, and the Dartmouth workshop that gave artificial intelligence its name.',
-    beginner: 'This is the moment AI stopped being science fiction and became an organized scientific project.',
-    technical: 'The field unified ideas from symbolic logic, computation, information theory, and early neural models under a shared research agenda.',
-    tags: ['Turing', 'Dartmouth', 'cybernetics']
+    id: 'room-2',
+    accent: 'teal',
+    years: '1943–1956',
+    eyebrow: 'Room 2',
+    question: 'Can intelligence be formalized?',
+    title: 'Neural abstraction, wartime computing, and philosophy converged into a research program.',
+    summary: 'This is the bridge between speculation and science. Artificial neurons, the imitation game, and cybernetic thinking made it plausible that cognition could be modeled rather than merely described.',
+    beginner: 'Researchers stopped asking whether intelligent machines were only fantasy and started asking what ingredients they would need.',
+    technical: 'McCulloch-Pitts neurons, early information theory, and Turing’s computational framing together created a legitimate theoretical basis for machine intelligence research.',
+    image: './assets/rooms/formalized-intelligence.svg',
+    imageAlt: 'Original diagram showing a stylized neuron, logic gates, and a text panel representing formalized intelligence.',
+    imageLabel: 'Original vector diagram',
+    milestones: [
+      { year: '1943', title: 'McCulloch & Pitts', note: 'Artificial neurons linked brain-like behavior to logic and computation.' },
+      { year: '1950', title: 'Turing Test', note: 'Turing reframed machine intelligence as a behavioral and computational question.' },
+      { year: '1956', title: 'Dartmouth workshop', note: 'Artificial intelligence became a named field with its own agenda.' }
+    ]
   },
   {
-    id: 'early-optimism',
-    icon: '♟️',
-    era: 'Early optimism',
-    years: '1956 → 1974',
-    title: 'Researchers solved narrow problems and thought general intelligence was close',
-    summary: 'Early systems proved that computers could solve algebra, play games, and manipulate symbols. Researchers often believed human-level intelligence was just around the corner.',
-    beginner: 'The first successes were real—but they happened in toy worlds with simplified rules.',
-    technical: 'Search, theorem proving, symbolic planning, and early perceptrons worked in constrained environments but struggled with combinatorial explosion and messy real-world data.',
-    tags: ['symbolic AI', 'perceptron', 'search']
+    id: 'room-3',
+    accent: 'violet',
+    years: '1956–1969',
+    eyebrow: 'Room 3',
+    question: 'Would symbols and search be enough?',
+    title: 'Early AI worked just well enough to make people think general intelligence was close.',
+    summary: 'The first generation of AI shined in bounded worlds: theorem proving, games, simple language interaction, and early robotics. It was impressive, but often brittle outside carefully staged environments.',
+    beginner: 'AI looked closer than it really was because early demos worked in toy worlds with simplified rules.',
+    technical: 'Symbolic search, theorem proving, perceptrons, and systems like ELIZA and Shakey delivered narrow successes while exposing limits in generalization, perception, and combinatorial complexity.',
+    image: './assets/rooms/symbolic-optimism.svg',
+    imageAlt: 'Original visual showing symbolic trees, a chatbot dialog, and a robot path plan.',
+    imageLabel: 'Original exhibit graphic',
+    milestones: [
+      { year: '1958', title: 'Perceptron', note: 'Rosenblatt showed that machines could learn simple boundaries from examples.' },
+      { year: '1966', title: 'ELIZA', note: 'A text interface made AI feel personal before it was actually intelligent.' },
+      { year: '1966–72', title: 'Shakey', note: 'Robotics fused planning, sensing, and action in one system.' }
+    ]
   },
   {
-    id: 'ai-winter',
-    icon: '❄️',
-    era: 'First AI winter',
-    years: '1974 → 1980',
-    title: 'Reality caught up with the hype',
-    summary: 'Funding slowed after many systems failed to scale beyond demos. Expectations had outrun compute, data, and algorithmic robustness.',
-    beginner: 'This was a warning sign: impressive demos are not the same as dependable intelligence.',
-    technical: 'Brittle symbolic systems, limited hardware, and weak generalization caused enthusiasm to collapse once benchmarks became more realistic.',
-    tags: ['AI winter', 'limits', 'funding crash']
+    id: 'room-4',
+    accent: 'rose',
+    years: '1970–1993',
+    eyebrow: 'Room 4',
+    question: 'What happens when promises hit maintenance costs?',
+    title: 'Rule-heavy systems found commercial value, then showed how brittle knowledge engineering could be.',
+    summary: 'This era is not just a winter. It is a cycle: symbolic success, business adoption, then painful limits. Expert systems worked, but they were expensive to build, hard to maintain, and fragile in changing environments.',
+    beginner: 'AI did become useful here, but mainly when it stayed narrow and highly supervised.',
+    technical: 'Inference engines, rule bases, Prolog, and backpropagation’s revival revealed a tension between handcrafted knowledge systems and trainable representations.',
+    image: './assets/rooms/expert-systems.svg',
+    imageAlt: 'Original diagram of a terminal-like expert system and branching rules.',
+    imageLabel: 'Original rule-engine visual',
+    milestones: [
+      { year: '1972', title: 'Prolog', note: 'Logic programming sharpened the symbolic AI toolbox.' },
+      { year: '1980', title: 'Expert systems boom', note: 'Business AI returned through narrow, rule-driven software.' },
+      { year: '1986', title: 'Backpropagation', note: 'Multi-layer neural nets became trainable in a more practical way.' }
+    ]
   },
   {
-    id: 'expert-systems',
-    icon: '📚',
-    era: 'Expert systems boom',
-    years: '1980s',
-    title: 'Commercial AI returned through rule-based expertise',
-    summary: 'Expert systems captured human specialist knowledge in large rule sets and found real business use in diagnostics, configuration, and decision support.',
-    beginner: 'AI came back by becoming useful in specific domains instead of trying to be universally intelligent.',
-    technical: 'Knowledge engineering, inference engines, and domain-specific rule bases improved practical adoption, but maintenance costs and brittleness remained major issues.',
-    tags: ['expert systems', 'commercial AI', 'rules']
+    id: 'room-5',
+    accent: 'ice',
+    years: '1990–2011',
+    eyebrow: 'Room 5',
+    question: 'Can machines learn from data instead of hand-written rules?',
+    title: 'The statistical turn moved AI toward probability, benchmarks, and large-scale pattern recognition.',
+    summary: 'The field became less like hand-authored logic and more like estimation. Probabilistic methods, benchmark datasets, and larger compute made progress measurable in new ways.',
+    beginner: 'This is when AI started becoming better at prediction because it was learning from examples rather than following giant rulebooks.',
+    technical: 'Probabilistic modeling, SVMs, recommender systems, speech models, and benchmark culture shifted AI toward empirical performance and data-driven generalization.',
+    image: './assets/rooms/statistical-turn.svg',
+    imageAlt: 'Original data-heavy chart showing benchmark curves and a chessboard motif.',
+    imageLabel: 'Original benchmark visual',
+    milestones: [
+      { year: '1997', title: 'Deep Blue', note: 'Elite game play demonstrated narrow superhuman performance.' },
+      { year: '1998', title: 'MNIST era', note: 'Benchmark datasets standardized what “good” looked like.' },
+      { year: '2009', title: 'ImageNet', note: 'Large curated datasets changed the pace of computer vision.' }
+    ]
   },
   {
-    id: 'statistical-turn',
-    icon: '📈',
-    era: 'Statistical turn',
-    years: '1990s → 2000s',
-    title: 'AI became more data-driven and probabilistic',
-    summary: 'Researchers increasingly favored methods that learned from data—probabilistic models, support vector machines, speech models, and recommender systems.',
-    beginner: 'Instead of hard-coding every rule, engineers started asking machines to learn patterns from examples.',
-    technical: 'Probabilistic inference, Bayesian methods, kernel methods, and large-scale optimization shifted AI away from handcrafted symbolic pipelines.',
-    tags: ['statistics', 'probability', 'machine learning']
-  },
-  {
-    id: 'deep-learning',
-    icon: '🖥️',
-    era: 'Deep learning breakthrough',
-    years: '2010s',
-    title: 'Neural networks surged once data and GPUs caught up',
-    summary: 'Deep learning transformed image recognition, speech, translation, and representation learning—especially after 2012 showed how modern hardware could unlock older ideas.',
-    beginner: 'This is when AI started getting dramatically better at perception tasks that used to be considered too hard.',
-    technical: 'Backpropagation, large labeled datasets, GPU acceleration, and deeper architectures enabled scalable end-to-end learning with strong benchmark performance.',
-    tags: ['AlexNet', 'GPUs', 'representation learning']
-  },
-  {
-    id: 'foundation-models',
-    icon: '🌐',
-    era: 'Foundation models',
-    years: '2017 → present',
-    title: 'Transformers and scale turned AI into a general-purpose interface',
-    summary: 'Modern AI systems can write, classify, summarize, generate images, answer questions, and act through tools because transformer-based models scale unusually well.',
-    beginner: 'This is why AI suddenly feels everywhere: one model family became useful across many different tasks.',
-    technical: 'Attention-based architectures, self-supervised learning, reinforcement learning from human feedback, and scaling laws pushed models toward broad transfer and tool use.',
-    tags: ['transformers', 'LLMs', 'multimodal AI']
+    id: 'room-6',
+    accent: 'copper',
+    years: '2012–present',
+    eyebrow: 'Room 6',
+    question: 'When did AI become a general interface instead of a narrow tool?',
+    title: 'Deep learning, transformers, and scaled training turned AI into a platform people use directly.',
+    summary: 'Modern AI feels different because one family of approaches now spans language, vision, code, and multimodal generation. The breakthrough was not one model, but a stack: data, compute, architecture, tooling, and interfaces.',
+    beginner: 'This is the era where AI leaves the lab and becomes part of everyday work, creativity, and search.',
+    technical: 'AlexNet, transformer attention, self-supervised pretraining, RLHF, and multimodal scaling shifted AI from task-specific pipelines to reusable foundation models.',
+    image: './assets/rooms/foundation-models.svg',
+    imageAlt: 'Original diagram of transformer blocks and modern AI interfaces.',
+    imageLabel: 'Original foundation-model diagram',
+    milestones: [
+      { year: '2012', title: 'AlexNet', note: 'GPU-backed deep learning broke away from the old baseline.' },
+      { year: '2017', title: 'Transformer', note: 'Attention rewired sequence modeling and scaling.' },
+      { year: '2020–22', title: 'GPT-3 to ChatGPT', note: 'Foundation models turned conversational AI into a mainstream product surface.' }
+    ]
   }
 ];
 
-const galleryData = [
+const linearTimeline = [
+  { year: '1837', title: 'Babbage outlines the Analytical Engine' },
+  { year: '1843', title: 'Ada Lovelace describes symbolic computation' },
+  { year: '1936', title: 'Turing formalizes computability' },
+  { year: '1943', title: 'McCulloch and Pitts publish artificial neuron model' },
+  { year: '1950', title: 'Turing proposes the imitation game' },
+  { year: '1956', title: 'Dartmouth names the field' },
+  { year: '1958', title: 'Perceptron learning enters the story' },
+  { year: '1966', title: 'ELIZA shows the cultural power of conversation' },
+  { year: '1972', title: 'Prolog sharpens symbolic reasoning' },
+  { year: '1980', title: 'Expert systems become commercially important' },
+  { year: '1986', title: 'Backpropagation revives neural learning' },
+  { year: '1997', title: 'Deep Blue beats Kasparov' },
+  { year: '2009', title: 'ImageNet helps benchmark visual recognition' },
+  { year: '2012', title: 'AlexNet resets expectations for perception' },
+  { year: '2017', title: 'Transformers become the new backbone' },
+  { year: '2021', title: 'AlphaFold 2 shows AI as scientific infrastructure' },
+  { year: '2022', title: 'ChatGPT mainstreams conversational AI' }
+];
+
+const artifactData = [
   {
-    initials: 'AT',
-    meta: '1936',
     title: 'Alan Turing',
-    text: 'Turing made the question of machine intelligence concrete by tying it to computation rather than magic.'
+    label: 'Sourced archival image',
+    text: 'A real historical figure anchors the theoretical side of the story and keeps the project from becoming pure abstraction.',
+    image: './assets/history/alan-turing.jpg'
   },
   {
-    initials: 'DM',
-    meta: '1956',
-    title: 'Dartmouth workshop',
-    text: 'This is where AI became a field instead of a loose cluster of adjacent ideas.'
+    title: 'Frank Rosenblatt',
+    label: 'Sourced archival image',
+    text: 'Rosenblatt is a useful bridge between symbolic optimism and the neural-network line that eventually resurged.',
+    image: './assets/history/frank-rosenblatt.jpg'
   },
   {
-    initials: 'DB',
-    meta: '1997',
-    title: 'Deep Blue',
-    text: 'A symbolic and search-heavy system that showed computers could dominate elite play in constrained domains.'
+    title: 'Statistical turn',
+    label: 'Original illustration',
+    text: 'A chart-led visual treatment for the benchmark era, where datasets and measurable error rates mattered more than theatrical demos.',
+    image: './assets/rooms/statistical-turn.svg'
   },
   {
-    initials: 'AN',
-    meta: '2012',
-    title: 'AlexNet',
-    text: 'The image-net breakthrough that made deep learning impossible to ignore.'
-  },
-  {
-    initials: 'TR',
-    meta: '2017',
-    title: 'Transformers',
-    text: 'Attention changed the economics of sequence modeling and unlocked modern foundation models.'
-  },
-  {
-    initials: 'LL',
-    meta: '2020s',
-    title: 'Large language models',
-    text: 'The interface layer that made AI feel mainstream because it met people in natural language.'
+    title: 'Foundation models',
+    label: 'Original illustration',
+    text: 'A house-style transformer and interface visual replaces borrowed paper figures and keeps the page cohesive.',
+    image: './assets/rooms/foundation-models.svg'
   }
 ];
 
-const timelineList = document.getElementById('timeline-list');
-const eraNav = document.getElementById('era-nav');
-const galleryGrid = document.getElementById('gallery-grid');
+const roomsGrid = document.getElementById('rooms-grid');
+const timelineRail = document.getElementById('timeline-rail');
+const artifactWall = document.getElementById('artifact-wall');
 const modeButtons = document.querySelectorAll('.toggle-button');
 const heroAudioToggle = document.getElementById('hero-audio-toggle');
 const heroAudioNote = document.getElementById('hero-audio-note');
@@ -143,55 +177,105 @@ let heroPlayerReady = false;
 let heroAudioPlaying = false;
 let heroLoopInterval;
 
-function renderTimeline(mode = currentMode) {
-  if (!timelineList) return;
-  timelineList.innerHTML = timelineData.map(item => `
-    <article class="timeline-card" id="${item.id}">
-      <div class="timeline-era">
-        <div class="era-marker" aria-hidden="true">${item.icon}</div>
-        <span>${item.years}</span>
-        <strong>${item.era}</strong>
+function renderRooms() {
+  if (!roomsGrid) return;
+  roomsGrid.innerHTML = roomsData.map((room, index) => `
+    <article class="room-card room-${room.accent} tilt-card reveal ${index % 2 ? 'reverse' : ''}" id="${room.id}">
+      <div class="room-media">
+        <div class="room-media-label">${room.imageLabel}</div>
+        <img src="${room.image}" alt="${room.imageAlt}" loading="lazy" />
       </div>
-      <div class="timeline-body">
-        <h3>${item.title}</h3>
-        <p class="timeline-summary">${item.summary}</p>
-        <div class="timeline-detail">
-          <strong>${mode === 'beginner' ? 'Plain-English takeaway' : 'Technical note'}</strong>
-          <p>${mode === 'beginner' ? item.beginner : item.technical}</p>
-          <div class="timeline-tags">${item.tags.map(tag => `<span>${tag}</span>`).join('')}</div>
+      <div class="room-copy">
+        <div class="room-meta">
+          <span class="room-eyebrow">${room.eyebrow}</span>
+          <span class="room-years">${room.years}</span>
+        </div>
+        <p class="room-question">${room.question}</p>
+        <h3>${room.title}</h3>
+        <p class="room-summary">${room.summary}</p>
+        <div class="room-mode-note">
+          <strong>${currentMode === 'beginner' ? 'Newcomer reading' : 'Technical reading'}</strong>
+          <p>${currentMode === 'beginner' ? room.beginner : room.technical}</p>
+        </div>
+        <div class="milestone-list">
+          ${room.milestones.map(item => `
+            <div class="milestone-item">
+              <span class="milestone-year">${item.year}</span>
+              <div>
+                <strong>${item.title}</strong>
+                <p>${item.note}</p>
+              </div>
+            </div>
+          `).join('')}
         </div>
       </div>
     </article>
   `).join('');
+
+  initializeTiltCards();
+  initializeRevealAnimations();
 }
 
-function renderEraNav() {
-  if (!eraNav) return;
-  eraNav.innerHTML = timelineData.map((item, index) => `
-    <button class="era-chip ${index === 0 ? 'active' : ''}" data-target="${item.id}">${item.era}</button>
+function renderLinearTimeline() {
+  if (!timelineRail) return;
+  timelineRail.innerHTML = linearTimeline.map(item => `
+    <article class="rail-item reveal">
+      <span class="rail-year">${item.year}</span>
+      <h3>${item.title}</h3>
+    </article>
+  `).join('');
+}
+
+function renderArtifacts() {
+  if (!artifactWall) return;
+  artifactWall.innerHTML = artifactData.map(item => `
+    <article class="artifact-card tilt-card reveal">
+      <img src="${item.image}" alt="${item.title}" loading="lazy" />
+      <div class="artifact-copy">
+        <span>${item.label}</span>
+        <h3>${item.title}</h3>
+        <p>${item.text}</p>
+      </div>
+    </article>
   `).join('');
 
-  eraNav.querySelectorAll('.era-chip').forEach(button => {
-    button.addEventListener('click', () => {
-      const target = document.getElementById(button.dataset.target || '');
-      if (!target) return;
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      eraNav.querySelectorAll('.era-chip').forEach(chip => chip.classList.remove('active'));
-      button.classList.add('active');
+  initializeTiltCards();
+  initializeRevealAnimations();
+}
+
+function initializeRevealAnimations() {
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.18 });
+
+  reveals.forEach((element) => {
+    if (!element.classList.contains('revealed')) {
+      observer.observe(element);
+    }
   });
 }
 
-function renderGallery() {
-  if (!galleryGrid) return;
-  galleryGrid.innerHTML = galleryData.map(item => `
-    <article class="gallery-card">
-      <div class="avatar" aria-hidden="true">${item.initials}</div>
-      <span class="meta">${item.meta}</span>
-      <h3>${item.title}</h3>
-      <p>${item.text}</p>
-    </article>
-  `).join('');
+function initializeTiltCards() {
+  document.querySelectorAll('.tilt-card').forEach((card) => {
+    card.addEventListener('mousemove', (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const rotateY = ((x / rect.width) - 0.5) * 8;
+      const rotateX = ((y / rect.height) - 0.5) * -8;
+      card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
 }
 
 function updateHeroAudioUI() {
@@ -201,14 +285,13 @@ function updateHeroAudioUI() {
   heroAudioToggle.classList.toggle('is-playing', heroAudioPlaying);
   if (heroAudioNote) {
     heroAudioNote.textContent = heroAudioPlaying
-      ? 'The hero video is playing with sound. Tap to mute it.'
+      ? 'The hero clip is playing with sound. Tap to mute it.'
       : 'The hero video auto-plays muted. Tap to hear the clip.';
   }
 }
 
 function keepHeroClipLooping() {
   if (!heroPlayerReady || !heroPlayer) return;
-
   window.clearInterval(heroLoopInterval);
   heroLoopInterval = window.setInterval(() => {
     const currentTime = heroPlayer.getCurrentTime?.();
@@ -219,11 +302,16 @@ function keepHeroClipLooping() {
   }, 500);
 }
 
-function unmuteHeroAudio() {
-  if (!heroPlayerReady || !heroPlayer) {
-    return;
-  }
+function muteHeroAudio() {
+  if (!heroPlayerReady || !heroPlayer) return;
+  heroPlayer.mute();
+  heroPlayer.playVideo();
+  heroAudioPlaying = false;
+  updateHeroAudioUI();
+}
 
+function unmuteHeroAudio() {
+  if (!heroPlayerReady || !heroPlayer) return;
   heroPlayer.unMute();
   heroPlayer.setVolume?.(75);
   heroPlayer.playVideo();
@@ -231,21 +319,9 @@ function unmuteHeroAudio() {
   updateHeroAudioUI();
 }
 
-function muteHeroAudio() {
-  if (!heroPlayerReady || !heroPlayer) {
-    return;
-  }
-
-  heroPlayer.mute();
-  heroPlayer.playVideo();
-  heroAudioPlaying = false;
-  updateHeroAudioUI();
-}
-
 function fallbackHeroAudioControl() {
   const iframe = document.getElementById('hero-player');
   if (!iframe) return;
-
   const nextMuted = heroAudioPlaying ? '1' : '0';
   iframe.src = `https://www.youtube-nocookie.com/embed/${HERO_VIDEO_ID}?autoplay=1&mute=${nextMuted}&controls=0&loop=1&playlist=${HERO_VIDEO_ID}&start=${HERO_CLIP_START}&end=${HERO_CLIP_END}&playsinline=1&rel=0&modestbranding=1&enablejsapi=1`;
   heroAudioPlaying = !heroAudioPlaying;
@@ -258,97 +334,66 @@ function onHeroPlayerReady(event) {
   event.target.seekTo(HERO_CLIP_START, true);
   event.target.playVideo();
   keepHeroClipLooping();
-  updateHeroAudioUI();
 }
 
-function onHeroPlayerStateChange(event) {
-  if (!window.YT || event.data !== window.YT.PlayerState.ENDED) return;
-  heroPlayer.seekTo(HERO_CLIP_START, true);
-  heroPlayer.playVideo();
-}
-
-function loadHeroPlayerAPI() {
-  if (!document.getElementById('hero-player')) return;
-  const tag = document.createElement('script');
-  tag.src = 'https://www.youtube.com/iframe_api';
-  document.head.appendChild(tag);
-}
-
-window.onYouTubeIframeAPIReady = function onYouTubeIframeAPIReady() {
-  heroPlayer = new window.YT.Player('hero-player', {
+function onYouTubeIframeAPIReady() {
+  const iframe = document.getElementById('hero-player');
+  if (!iframe || typeof YT === 'undefined' || !YT.Player) return;
+  heroPlayer = new YT.Player('hero-player', {
     events: {
       onReady: onHeroPlayerReady,
-      onStateChange: onHeroPlayerStateChange,
-    },
-  });
-};
-
-function initRevealAnimations() {
-  const revealNodes = document.querySelectorAll('.reveal');
-  if (!revealNodes.length) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+      onStateChange: (event) => {
+        if (event.data === YT.PlayerState.ENDED) {
+          heroPlayer.seekTo(HERO_CLIP_START, true);
+          heroPlayer.playVideo();
+        }
       }
-    });
-  }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -8% 0px',
-  });
-
-  revealNodes.forEach((node) => observer.observe(node));
-}
-
-function initTiltCards() {
-  const cards = document.querySelectorAll('.tilt-card');
-  cards.forEach((card) => {
-    card.addEventListener('mousemove', (event) => {
-      const rect = card.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width;
-      const y = (event.clientY - rect.top) / rect.height;
-      const rotateY = (x - 0.5) * 10;
-      const rotateX = (0.5 - y) * 10;
-      card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
+    }
   });
 }
 
-modeButtons.forEach(button => {
+function loadYouTubeAPI() {
+  if (document.querySelector('script[data-youtube-api="true"]')) return;
+  const tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  tag.dataset.youtubeApi = 'true';
+  document.body.appendChild(tag);
+}
+
+window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+
+modeButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    currentMode = button.dataset.mode || 'beginner';
-    modeButtons.forEach(btn => {
-      const active = btn === button;
-      btn.classList.toggle('active', active);
-      btn.setAttribute('aria-selected', String(active));
+    const mode = button.dataset.mode;
+    if (!mode || mode === currentMode) return;
+    currentMode = mode;
+    modeButtons.forEach((item) => {
+      const active = item === button;
+      item.classList.toggle('active', active);
+      item.setAttribute('aria-selected', String(active));
     });
-    renderTimeline(currentMode);
+    renderRooms();
   });
 });
 
-heroAudioToggle?.addEventListener('click', () => {
-  if (!heroPlayerReady) {
-    fallbackHeroAudioControl();
-    return;
-  }
+if (heroAudioToggle) {
+  heroAudioToggle.addEventListener('click', () => {
+    if (!heroPlayerReady) {
+      fallbackHeroAudioControl();
+      return;
+    }
+    if (heroAudioPlaying) {
+      muteHeroAudio();
+    } else {
+      unmuteHeroAudio();
+    }
+  });
+}
 
-  if (heroAudioPlaying) {
-    muteHeroAudio();
-  } else {
-    unmuteHeroAudio();
-  }
-});
-
-renderTimeline();
-renderEraNav();
-renderGallery();
+renderRooms();
+renderLinearTimeline();
+renderArtifacts();
+initializeRevealAnimations();
+initializeTiltCards();
 updateHeroAudioUI();
-loadHeroPlayerAPI();
-initRevealAnimations();
-initTiltCards();
+loadYouTubeAPI();

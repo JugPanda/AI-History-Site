@@ -1,0 +1,26 @@
+<svg width="1200" height="780" viewBox="0 0 1200 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="780" rx="40" fill="#140D09"/>
+  <rect x="52" y="52" width="1096" height="676" rx="32" fill="#1B130E" stroke="#5A3420"/>
+  <rect x="108" y="132" width="360" height="500" rx="28" fill="#120D0B" stroke="#4F2E1E"/>
+  <text x="148" y="188" fill="#DC8F66" font-family="Inter, Arial" font-size="18" letter-spacing="4">TRANSFORMER STACK</text>
+  <rect x="164" y="238" width="248" height="54" rx="16" fill="#281912"/>
+  <rect x="164" y="314" width="248" height="54" rx="16" fill="#281912"/>
+  <rect x="164" y="390" width="248" height="54" rx="16" fill="#281912"/>
+  <rect x="164" y="466" width="248" height="54" rx="16" fill="#281912"/>
+  <text x="190" y="272" fill="#F7F4EE" font-family="Inter, Arial" font-size="22">Attention</text>
+  <text x="190" y="348" fill="#F7F4EE" font-family="Inter, Arial" font-size="22">Feedforward</text>
+  <text x="190" y="424" fill="#F7F4EE" font-family="Inter, Arial" font-size="22">Residual + norm</text>
+  <text x="190" y="500" fill="#F7F4EE" font-family="Inter, Arial" font-size="22">Scale and repeat</text>
+  <rect x="560" y="144" width="540" height="468" rx="28" fill="#120D0B" stroke="#4F2E1E"/>
+  <rect x="608" y="206" width="180" height="82" rx="22" fill="#241710"/>
+  <rect x="820" y="206" width="220" height="82" rx="22" fill="#241710"/>
+  <rect x="608" y="326" width="216" height="82" rx="22" fill="#241710"/>
+  <rect x="856" y="326" width="184" height="82" rx="22" fill="#241710"/>
+  <rect x="608" y="446" width="432" height="108" rx="26" fill="#241710"/>
+  <text x="644" y="256" fill="#F7F4EE" font-family="Inter, Arial" font-size="24">Language</text>
+  <text x="860" y="256" fill="#F7F4EE" font-family="Inter, Arial" font-size="24">Vision</text>
+  <text x="644" y="376" fill="#F7F4EE" font-family="Inter, Arial" font-size="24">Code</text>
+  <text x="892" y="376" fill="#F7F4EE" font-family="Inter, Arial" font-size="24">Audio</text>
+  <text x="644" y="500" fill="#F7F4EE" font-family="Inter, Arial" font-size="28">Same family of models, many product surfaces</text>
+  <text x="644" y="536" fill="#D8C3B8" font-family="Inter, Arial" font-size="18">The interface becomes general-purpose.</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg width="1200" height="780" viewBox="0 0 1200 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="780" rx="40" fill="#0B1012"/>
+  <rect x="52" y="52" width="1096" height="676" rx="32" fill="#11181B" stroke="#24353A"/>
+  <circle cx="328" cy="390" r="118" fill="url(#n1)"/>
+  <circle cx="276" cy="342" r="20" fill="#DFFDFC"/>
+  <circle cx="374" cy="342" r="20" fill="#DFFDFC"/>
+  <circle cx="328" cy="450" r="26" fill="#7FD8D4"/>
+  <path d="M276 342L328 450M374 342L328 450M208 272L276 342M448 272L374 342" stroke="#7FD8D4" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="208" cy="272" r="20" fill="#B0F2EF"/>
+  <circle cx="448" cy="272" r="20" fill="#B0F2EF"/>
+  <rect x="566" y="148" width="484" height="484" rx="28" fill="#0E1317" stroke="#223036"/>
+  <text x="612" y="204" fill="#7FD8D4" font-family="Inter, Arial" font-size="18" letter-spacing="4">TURING / CYBERNETICS / DARTMOUTH</text>
+  <rect x="612" y="250" width="390" height="52" rx="16" fill="#151C21" stroke="#2B3A42"/>
+  <text x="642" y="283" fill="#F1F7F7" font-family="Inter, Arial" font-size="24">Can a machine imitate intelligence?</text>
+  <rect x="612" y="340" width="162" height="132" rx="18" fill="#132126"/>
+  <rect x="804" y="340" width="198" height="132" rx="18" fill="#132126"/>
+  <rect x="612" y="494" width="390" height="96" rx="20" fill="#151C21" stroke="#2B3A42"/>
+  <text x="636" y="392" fill="#B8EEEC" font-family="Inter, Arial" font-size="16">1943</text>
+  <text x="636" y="420" fill="#F7F4EE" font-family="Inter, Arial" font-size="22">Artificial neuron</text>
+  <text x="828" y="392" fill="#B8EEEC" font-family="Inter, Arial" font-size="16">1950</text>
+  <text x="828" y="420" fill="#F7F4EE" font-family="Inter, Arial" font-size="22">Imitation game</text>
+  <text x="636" y="548" fill="#B8EEEC" font-family="Inter, Arial" font-size="16">1956</text>
+  <text x="636" y="576" fill="#F7F4EE" font-family="Inter, Arial" font-size="22">Artificial intelligence becomes a field</text>
+  <defs>
+    <radialGradient id="n1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(328 390) rotate(90) scale(118)">
+      <stop stop-color="#7FD8D4" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#7FD8D4" stop-opacity="0.08"/>
+    </radialGradient>
+  </defs>
+</svg>

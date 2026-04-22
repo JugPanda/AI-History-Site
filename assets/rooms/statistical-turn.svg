@@ -1,0 +1,27 @@
+<svg width="1200" height="780" viewBox="0 0 1200 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="780" rx="40" fill="#0B1018"/>
+  <rect x="52" y="52" width="1096" height="676" rx="32" fill="#101723" stroke="#273550"/>
+  <rect x="96" y="120" width="1008" height="540" rx="30" fill="#0D121B" stroke="#25344F"/>
+  <path d="M170 580H1020" stroke="#2F466B" stroke-width="3"/>
+  <path d="M170 220V580" stroke="#2F466B" stroke-width="3"/>
+  <path d="M210 520L340 472L470 422L602 320L740 246L920 192" stroke="#9FC5FF" stroke-width="12" stroke-linecap="round"/>
+  <path d="M210 546L340 520L470 500L602 454L740 430L920 398" stroke="#7FD8D4" stroke-width="8" stroke-linecap="round" opacity="0.75"/>
+  <rect x="758" y="126" width="306" height="150" rx="22" fill="#131B28" stroke="#2E466E"/>
+  <text x="790" y="172" fill="#9FC5FF" font-family="Inter, Arial" font-size="18" letter-spacing="4">BENCHMARK ERA</text>
+  <text x="790" y="218" fill="#F7F4EE" font-family="Inter, Arial" font-size="28">Error rates fell. Dataset culture rose.</text>
+  <g opacity="0.9">
+    <rect x="146" y="154" width="190" height="110" rx="18" fill="#131B28" stroke="#2E466E"/>
+    <text x="178" y="198" fill="#F7F4EE" font-family="Inter, Arial" font-size="22">1997</text>
+    <text x="178" y="232" fill="#C9D8ED" font-family="Inter, Arial" font-size="18">Deep Blue</text>
+  </g>
+  <g opacity="0.9">
+    <rect x="370" y="154" width="190" height="110" rx="18" fill="#131B28" stroke="#2E466E"/>
+    <text x="402" y="198" fill="#F7F4EE" font-family="Inter, Arial" font-size="22">1998</text>
+    <text x="402" y="232" fill="#C9D8ED" font-family="Inter, Arial" font-size="18">MNIST culture</text>
+  </g>
+  <g opacity="0.9">
+    <rect x="594" y="154" width="190" height="110" rx="18" fill="#131B28" stroke="#2E466E"/>
+    <text x="626" y="198" fill="#F7F4EE" font-family="Inter, Arial" font-size="22">2009</text>
+    <text x="626" y="232" fill="#C9D8ED" font-family="Inter, Arial" font-size="18">ImageNet</text>
+  </g>
+</svg>
