@@ -327,7 +327,8 @@ main > section:not(.hero-section) {
 .premise-grid,
 .vector-grid,
 .sources-grid,
-.artifact-wall {
+.artifact-wall,
+.coda-grid {
   display: grid;
   gap: 20px;
 }
@@ -335,7 +336,8 @@ main > section:not(.hero-section) {
 .premise-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .vector-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .sources-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.artifact-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.artifact-wall { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.coda-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 .premise-card,
 .vector-card,
@@ -350,7 +352,8 @@ main > section:not(.hero-section) {
 
 .premise-card,
 .vector-card,
-.source-card {
+.source-card,
+.coda-grid article {
   padding: 26px;
   border-radius: 26px;
 }
@@ -359,6 +362,7 @@ main > section:not(.hero-section) {
 .premise-card h3,
 .vector-card h3,
 .source-card h3,
+.coda-grid h3,
 .artifact-copy h3,
 .rail-item h3,
 .room-copy h3 {
@@ -368,6 +372,7 @@ main > section:not(.hero-section) {
 .premise-card p,
 .vector-card p,
 .source-card ul,
+.coda-grid p,
 .artifact-copy p,
 .room-summary,
 .room-mode-note p,
@@ -558,7 +563,8 @@ main > section:not(.hero-section) {
 }
 
 .artifact-card img {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
+  width: 100%;
   object-fit: cover;
   background: #111117;
 }
@@ -567,10 +573,72 @@ main > section:not(.hero-section) {
   padding: 22px;
 }
 
+.coda-shell {
+  padding: 34px;
+  border-radius: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at top right, rgba(216,176,107,0.12), transparent 32%),
+    linear-gradient(180deg, rgba(16, 16, 24, 0.9), rgba(10, 10, 16, 0.96));
+  box-shadow: var(--shadow);
+}
+
+.coda-intro {
+  max-width: 820px;
+  display: grid;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.coda-intro h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem, 4.8vw, 3.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.coda-intro p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.coda-grid article {
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+}
+
+.coda-grid span {
+  color: var(--gold);
+  font-weight: 700;
+}
+
 .source-card ul {
   padding-left: 18px;
   display: grid;
   gap: 10px;
+}
+
+.site-footer {
+  width: min(var(--max), calc(100% - 48px));
+  margin: 0 auto;
+  padding: 0 0 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+}
+
+.site-footer p {
+  margin: 10px 0 0;
+  max-width: 680px;
+  color: var(--muted);
+}
+
+.site-footer a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: rgba(216,176,107,0.5);
 }
 
 .source-card li::marker { color: var(--gold); }
@@ -624,7 +692,8 @@ main > section:not(.hero-section) {
   .vector-grid,
   .premise-grid,
   .sources-grid,
-  .artifact-wall {
+  .artifact-wall,
+  .coda-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -652,10 +721,17 @@ main > section:not(.hero-section) {
     width: min(100%, calc(100% - 32px));
   }
 
+  .site-footer {
+    width: min(100%, calc(100% - 32px));
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .premise-grid,
   .vector-grid,
   .sources-grid,
-  .artifact-wall {
+  .artifact-wall,
+  .coda-grid {
     grid-template-columns: 1fr;
   }
 

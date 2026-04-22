@@ -138,15 +138,27 @@ const linearTimeline = [
 const artifactData = [
   {
     title: 'Alan Turing',
-    label: 'Sourced archival image',
-    text: 'A real historical figure anchors the theoretical side of the story and keeps the project from becoming pure abstraction.',
-    image: './assets/history/alan-turing.jpg'
+    label: 'Wikimedia Commons archive',
+    text: 'A formal archival portrait gives the early theoretical room more weight than a generic illustration ever could.',
+    image: './assets/archive/alan-turing-1951.jpg'
   },
   {
     title: 'Frank Rosenblatt',
-    label: 'Sourced archival image',
-    text: 'Rosenblatt is a useful bridge between symbolic optimism and the neural-network line that eventually resurged.',
+    label: 'Archival portrait',
+    text: 'Rosenblatt bridges symbolic optimism and the neural-network lineage that later re-emerged at scale.',
     image: './assets/history/frank-rosenblatt.jpg'
+  },
+  {
+    title: 'ELIZA terminal recreation',
+    label: 'Historical software artifact',
+    text: 'This is not just a portrait wall: the ELIZA screenshot shows how early conversational AI actually looked and felt.',
+    image: './assets/history/eliza.png'
+  },
+  {
+    title: 'Deep Blue',
+    label: 'Wikimedia Commons archive',
+    text: 'The hardware shot gives the wall a real machine in the room, not just names and ideas.',
+    image: './assets/archive/deep-blue-commons.jpg'
   },
   {
     title: 'Statistical turn',
