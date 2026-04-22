@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The History of AI</title>
+  <meta name="description" content="A cinematic, beginner-friendly and technical tour through the history of artificial intelligence—from myths and logic machines to deep learning and large language models." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#hero">AI / HISTORY</a>
+      <nav>
+        <a href="#timeline">Timeline</a>
+        <a href="#concepts">Concepts</a>
+        <a href="#turning-points">Turning Points</a>
+        <a href="#sources">Sources</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="hero-section">
+        <div class="hero-video-wrap" aria-hidden="true">
+          <iframe
+            id="hero-player"
+            src="https://www.youtube-nocookie.com/embed/cHuqhQmc4ok?autoplay=1&mute=1&controls=0&loop=1&playlist=cHuqhQmc4ok&start=270&end=310&playsinline=1&rel=0&modestbranding=1"
+            title="AI history hero background"
+            frameborder="0"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <div class="hero-video-fallback"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">From ancient automata to large language models</p>
+          <h1>The history of AI, explained for curious newcomers and tech-savvy readers alike.</h1>
+          <p class="hero-copy">
+            AI did not appear overnight. It emerged through logic, statistics, neural networks, hardware breakthroughs,
+            funding crashes, and a long series of arguments about what intelligence actually is.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#timeline">Explore the timeline</a>
+            <a class="button secondary" href="#concepts">Start with the basics</a>
+          </div>
+          <div class="hero-meta">
+            <div>
+              <span class="meta-label">Why this page works for beginners</span>
+              <p>Every milestone has a plain-English explanation.</p>
+            </div>
+            <div>
+              <span class="meta-label">Why this page works for technical readers</span>
+              <p>Every milestone also includes the mechanism that made it matter.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-grid">
+        <article class="panel panel-accent">
+          <span class="panel-kicker">New to AI?</span>
+          <h2>Start with three ideas.</h2>
+          <ol>
+            <li><strong>Symbolic AI</strong> tried to encode intelligence as rules and logic.</li>
+            <li><strong>Machine learning</strong> shifted the focus toward learning patterns from data.</li>
+            <li><strong>Modern generative AI</strong> combines massive compute, large datasets, and scalable architectures.</li>
+          </ol>
+        </article>
+        <article class="panel">
+          <span class="panel-kicker">Already technical?</span>
+          <h2>Watch the real inflection points.</h2>
+          <ul>
+            <li>Search + symbolic reasoning → early optimism</li>
+            <li>Perceptrons, backprop, and statistical learning → new representations</li>
+            <li>GPUs, transformers, and scaling laws → today’s model ecosystem</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="timeline" class="content-section">
+        <div class="section-heading">
+          <p class="eyebrow">The long arc</p>
+          <h2>Timeline of AI</h2>
+          <p>
+            This timeline is designed to answer two questions at once: <em>What happened?</em> and <em>Why did it change what was possible?</em>
+          </p>
+        </div>
+
+        <div class="explainer-toggle" role="tablist" aria-label="Explanation depth">
+          <button class="toggle-button active" data-mode="beginner" aria-selected="true">Beginner view</button>
+          <button class="toggle-button" data-mode="technical" aria-selected="false">Technical view</button>
+        </div>
+
+        <div id="timeline-list" class="timeline-list"></div>
+      </section>
+
+      <section id="concepts" class="content-section concepts-section">
+        <div class="section-heading">
+          <p class="eyebrow">Helpful mental models</p>
+          <h2>Three big concepts that make AI history easier to understand</h2>
+        </div>
+        <div class="concept-grid">
+          <article class="panel">
+            <h3>1. AI has repeatedly switched paradigms</h3>
+            <p>
+              The field moved from hand-written logic and search, to expert systems, to probabilistic models,
+              to neural nets, to deep learning and transformers. Each wave solved different problems well—and hit different ceilings.
+            </p>
+          </article>
+          <article class="panel">
+            <h3>2. Progress depends on hardware and data, not just ideas</h3>
+            <p>
+              Better algorithms matter, but so do GPUs, memory bandwidth, datasets, and infrastructure. Many ideas became useful only when compute caught up.
+            </p>
+          </article>
+          <article class="panel">
+            <h3>3. AI winters happened when promises outran reality</h3>
+            <p>
+              The history of AI is not a straight line upward. Funding and public enthusiasm collapsed more than once when systems failed outside narrow demos.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="turning-points" class="content-section turning-points">
+        <div class="section-heading">
+          <p class="eyebrow">Why today feels different</p>
+          <h2>Four turning points that changed the trajectory</h2>
+        </div>
+        <div class="turning-grid">
+          <article class="panel panel-dark">
+            <span class="turning-year">1956</span>
+            <h3>Dartmouth gave the field a name</h3>
+            <p>The field became legible. Once "artificial intelligence" existed as a shared project, funding, research agendas, and public expectations followed.</p>
+          </article>
+          <article class="panel panel-dark">
+            <span class="turning-year">1986</span>
+            <h3>Backpropagation made layered learning practical</h3>
+            <p>Neural networks stopped being just an appealing metaphor and became trainable systems with a credible path to useful representation learning.</p>
+          </article>
+          <article class="panel panel-dark">
+            <span class="turning-year">2012</span>
+            <h3>Deep learning won on modern hardware</h3>
+            <p>AlexNet showed what happens when large neural nets, abundant data, and GPU acceleration align at the same moment.</p>
+          </article>
+          <article class="panel panel-dark">
+            <span class="turning-year">2017–present</span>
+            <h3>Transformers scaled to general-purpose systems</h3>
+            <p>Large language models pushed AI from narrow-task tools toward flexible systems that can write, classify, reason, summarize, and act across interfaces.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section audience-section">
+        <div class="section-heading">
+          <p class="eyebrow">Read the field through two lenses</p>
+          <h2>What a newcomer should notice vs. what a technical reader should notice</h2>
+        </div>
+        <div class="audience-grid">
+          <article class="panel">
+            <h3>For new viewers</h3>
+            <ul>
+              <li>AI is older than most people think.</li>
+              <li>There was never one single path to “intelligence.”</li>
+              <li>The field repeatedly overpromised and then rebuilt itself.</li>
+              <li>Today’s tools feel magical partly because older failures taught the field what not to do.</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>For technical readers</h3>
+            <ul>
+              <li>Representation learning beat brittle feature engineering in many domains.</li>
+              <li>Benchmarks, data scale, and accelerator economics are as important as architectures.</li>
+              <li>Paradigm shifts often came from combining old ideas with newly affordable compute.</li>
+              <li>Modern progress still inherits open problems from earlier eras: grounding, robustness, reasoning, and alignment.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="sources" class="content-section sources-section">
+        <div class="section-heading">
+          <p class="eyebrow">Sources and research inputs</p>
+          <h2>What informed this site</h2>
+          <p>This page synthesizes established historical references and product documentation used for the hero-video implementation.</p>
+        </div>
+        <div class="source-list panel">
+          <a href="https://www.ibm.com/think/topics/history-of-artificial-intelligence" target="_blank" rel="noreferrer">IBM — The history of AI</a>
+          <a href="https://en.wikipedia.org/wiki/History_of_artificial_intelligence" target="_blank" rel="noreferrer">Wikipedia — History of artificial intelligence</a>
+          <a href="https://developers.google.com/youtube/player_parameters" target="_blank" rel="noreferrer">Google for Developers — YouTube player parameters</a>
+          <a href="https://playwright.dev/docs/test-snapshots" target="_blank" rel="noreferrer">Playwright — Visual comparisons</a>
+          <a href="https://playwright.dev/docs/screenshots" target="_blank" rel="noreferrer">Playwright — Screenshots</a>
+          <a href="https://docs.phaser.io/phaser/concepts/gameobjects/nine-slice" target="_blank" rel="noreferrer">Phaser docs — Nine Slice</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
