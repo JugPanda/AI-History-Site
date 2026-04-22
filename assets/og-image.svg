@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#070810"/>
+      <stop offset="1" stop-color="#11162A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="196" y1="181" x2="1006" y2="448" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B7CFF"/>
+      <stop offset="0.55" stop-color="#61D8FF"/>
+      <stop offset="1" stop-color="#F98DE7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="958" cy="114" r="152" fill="#8B7CFF" fill-opacity="0.11"/>
+  <circle cx="236" cy="92" r="122" fill="#61D8FF" fill-opacity="0.12"/>
+  <rect x="74" y="84" width="1052" height="462" rx="34" fill="#0D1122" fill-opacity="0.84" stroke="white" stroke-opacity="0.08"/>
+  <text x="118" y="172" fill="#61D8FF" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="4">AI / HISTORY</text>
+  <text x="118" y="292" fill="white" font-family="Inter, Arial, sans-serif" font-size="82" font-weight="900">The History of AI</text>
+  <text x="118" y="354" fill="#D7DDF4" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="500">A cinematic tour through the ideas, winters, breakthroughs,</text>
+  <text x="118" y="395" fill="#D7DDF4" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="500">and scaling moments that built modern artificial intelligence.</text>
+  <rect x="118" y="454" width="272" height="46" rx="23" fill="url(#accent)" fill-opacity="0.22" stroke="#8B7CFF"/>
+  <text x="142" y="484" fill="white" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">For newcomers + technical readers</text>
+</svg>

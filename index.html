@@ -5,9 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The History of AI</title>
   <meta name="description" content="A cinematic, beginner-friendly and technical tour through the history of artificial intelligence—from myths and logic machines to deep learning and large language models." />
+  <meta property="og:title" content="The History of AI" />
+  <meta property="og:description" content="A cinematic tour through the history of AI for curious newcomers and technical readers alike." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The History of AI" />
+  <meta name="twitter:description" content="A cinematic tour through the history of AI for curious newcomers and technical readers alike." />
+  <meta name="twitter:image" content="./assets/og-image.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -18,6 +26,7 @@
         <a href="#timeline">Timeline</a>
         <a href="#concepts">Concepts</a>
         <a href="#turning-points">Turning Points</a>
+        <a href="#gallery">People & systems</a>
         <a href="#sources">Sources</a>
       </nav>
     </header>
@@ -37,9 +46,13 @@
           <div class="hero-video-fallback"></div>
         </div>
         <div class="hero-overlay"></div>
+
         <div class="hero-content">
-          <p class="eyebrow">From ancient automata to large language models</p>
-          <h1>The history of AI, explained for curious newcomers and tech-savvy readers alike.</h1>
+          <div class="hero-topline">
+            <p class="eyebrow">From ancient automata to large language models</p>
+            <span class="hero-pill">Built for newcomers + technical readers</span>
+          </div>
+          <h1>The history of AI, explained as a story of ideas, hype, winters, breakthroughs, and scale.</h1>
           <p class="hero-copy">
             AI did not appear overnight. It emerged through logic, statistics, neural networks, hardware breakthroughs,
             funding crashes, and a long series of arguments about what intelligence actually is.
@@ -48,14 +61,30 @@
             <a class="button primary" href="#timeline">Explore the timeline</a>
             <a class="button secondary" href="#concepts">Start with the basics</a>
           </div>
+
+          <div class="hero-stats">
+            <article>
+              <span>8 eras</span>
+              <p>from myth and mechanism to foundation models</p>
+            </article>
+            <article>
+              <span>2 AI winters</span>
+              <p>when optimism outran reality and funding collapsed</p>
+            </article>
+            <article>
+              <span>3 paradigm shifts</span>
+              <p>rules → statistics → deep learning and transformers</p>
+            </article>
+          </div>
+
           <div class="hero-meta">
             <div>
               <span class="meta-label">Why this page works for beginners</span>
-              <p>Every milestone has a plain-English explanation.</p>
+              <p>Every milestone has a plain-English explanation and a short “why it mattered” framing.</p>
             </div>
             <div>
               <span class="meta-label">Why this page works for technical readers</span>
-              <p>Every milestone also includes the mechanism that made it matter.</p>
+              <p>Every milestone also includes the mechanism: search, probability, backprop, GPUs, transformers, and scaling.</p>
             </div>
           </div>
         </div>
@@ -91,9 +120,12 @@
           </p>
         </div>
 
-        <div class="explainer-toggle" role="tablist" aria-label="Explanation depth">
-          <button class="toggle-button active" data-mode="beginner" aria-selected="true">Beginner view</button>
-          <button class="toggle-button" data-mode="technical" aria-selected="false">Technical view</button>
+        <div class="timeline-controls">
+          <div class="explainer-toggle" role="tablist" aria-label="Explanation depth">
+            <button class="toggle-button active" data-mode="beginner" aria-selected="true">Beginner view</button>
+            <button class="toggle-button" data-mode="technical" aria-selected="false">Technical view</button>
+          </div>
+          <div id="era-nav" class="era-nav" aria-label="Jump to an era"></div>
         </div>
 
         <div id="timeline-list" class="timeline-list"></div>
@@ -127,6 +159,40 @@
         </div>
       </section>
 
+      <section class="content-section visual-section">
+        <div class="section-heading">
+          <p class="eyebrow">A visual shortcut</p>
+          <h2>Three waves of AI development</h2>
+          <p>Not every detail fits in one chart, but this gets beginners oriented fast while still matching how technical readers often narrate the field.</p>
+        </div>
+        <div class="wave-chart panel">
+          <div class="wave-row">
+            <div class="wave-label">
+              <strong>Wave 1</strong>
+              <span>Rules & symbols</span>
+            </div>
+            <div class="wave-bar"><span style="width: 48%"></span></div>
+            <p>Strong on explicit logic and clean toy domains, weak in messy real-world situations.</p>
+          </div>
+          <div class="wave-row">
+            <div class="wave-label">
+              <strong>Wave 2</strong>
+              <span>Statistics & machine learning</span>
+            </div>
+            <div class="wave-bar"><span style="width: 72%"></span></div>
+            <p>Better pattern recognition and prediction by learning from data rather than encoding everything by hand.</p>
+          </div>
+          <div class="wave-row">
+            <div class="wave-label">
+              <strong>Wave 3</strong>
+              <span>Deep learning & foundation models</span>
+            </div>
+            <div class="wave-bar"><span style="width: 92%"></span></div>
+            <p>Massive gains from scale, GPUs, self-supervision, and transformer architectures that generalize across tasks.</p>
+          </div>
+        </div>
+      </section>
+
       <section id="turning-points" class="content-section turning-points">
         <div class="section-heading">
           <p class="eyebrow">Why today feels different</p>
@@ -136,7 +202,7 @@
           <article class="panel panel-dark">
             <span class="turning-year">1956</span>
             <h3>Dartmouth gave the field a name</h3>
-            <p>The field became legible. Once "artificial intelligence" existed as a shared project, funding, research agendas, and public expectations followed.</p>
+            <p>The field became legible. Once “artificial intelligence” existed as a shared project, funding, research agendas, and public expectations followed.</p>
           </article>
           <article class="panel panel-dark">
             <span class="turning-year">1986</span>
@@ -154,6 +220,15 @@
             <p>Large language models pushed AI from narrow-task tools toward flexible systems that can write, classify, reason, summarize, and act across interfaces.</p>
           </article>
         </div>
+      </section>
+
+      <section id="gallery" class="content-section gallery-section">
+        <div class="section-heading">
+          <p class="eyebrow">People, systems, and symbols</p>
+          <h2>Iconic moments that anchor the timeline</h2>
+          <p>Instead of dropping in random decorative art, this section gives viewers a compact cast of names and systems that frequently show up in AI history.</p>
+        </div>
+        <div id="gallery-grid" class="gallery-grid"></div>
       </section>
 
       <section class="content-section audience-section">
@@ -187,11 +262,12 @@
         <div class="section-heading">
           <p class="eyebrow">Sources and research inputs</p>
           <h2>What informed this site</h2>
-          <p>This page synthesizes established historical references and product documentation used for the hero-video implementation.</p>
+          <p>This page synthesizes established historical references and implementation docs used for the hero-video setup and presentation choices.</p>
         </div>
         <div class="source-list panel">
           <a href="https://www.ibm.com/think/topics/history-of-artificial-intelligence" target="_blank" rel="noreferrer">IBM — The history of AI</a>
           <a href="https://en.wikipedia.org/wiki/History_of_artificial_intelligence" target="_blank" rel="noreferrer">Wikipedia — History of artificial intelligence</a>
+          <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noreferrer">Britannica — Artificial intelligence overview</a>
           <a href="https://developers.google.com/youtube/player_parameters" target="_blank" rel="noreferrer">Google for Developers — YouTube player parameters</a>
           <a href="https://playwright.dev/docs/test-snapshots" target="_blank" rel="noreferrer">Playwright — Visual comparisons</a>
           <a href="https://playwright.dev/docs/screenshots" target="_blank" rel="noreferrer">Playwright — Screenshots</a>
