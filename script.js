@@ -283,6 +283,43 @@ window.onYouTubeIframeAPIReady = function onYouTubeIframeAPIReady() {
   });
 };
 
+function initRevealAnimations() {
+  const revealNodes = document.querySelectorAll('.reveal');
+  if (!revealNodes.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -8% 0px',
+  });
+
+  revealNodes.forEach((node) => observer.observe(node));
+}
+
+function initTiltCards() {
+  const cards = document.querySelectorAll('.tilt-card');
+  cards.forEach((card) => {
+    card.addEventListener('mousemove', (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width;
+      const y = (event.clientY - rect.top) / rect.height;
+      const rotateY = (x - 0.5) * 10;
+      const rotateX = (0.5 - y) * 10;
+      card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+
 modeButtons.forEach(button => {
   button.addEventListener('click', () => {
     currentMode = button.dataset.mode || 'beginner';
@@ -313,3 +350,5 @@ renderEraNav();
 renderGallery();
 updateHeroAudioUI();
 loadHeroPlayerAPI();
+initRevealAnimations();
+initTiltCards();
