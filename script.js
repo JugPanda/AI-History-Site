@@ -196,18 +196,18 @@ function renderGallery() {
 
 function updateHeroAudioUI() {
   if (!heroAudioToggle) return;
-  heroAudioToggle.textContent = heroAudioPlaying ? '❚❚ Pause clip audio' : '▶ Play clip audio';
+  heroAudioToggle.textContent = heroAudioPlaying ? '🔇 Mute clip' : '🔊 Unmute clip';
   heroAudioToggle.setAttribute('aria-pressed', String(heroAudioPlaying));
   heroAudioToggle.classList.toggle('is-playing', heroAudioPlaying);
   if (heroAudioNote) {
     heroAudioNote.textContent = heroAudioPlaying
-      ? 'Hero audio is on. Tap again to pause it.'
-      : 'Browsers block auto-playing sound, so the clip starts muted until you tap play.';
+      ? 'The hero video is playing with sound. Tap to mute it.'
+      : 'The hero video auto-plays muted. Tap to hear the clip.';
   }
 }
 
 function keepHeroClipLooping() {
-  if (!heroPlayerReady || !heroPlayer || !heroAudioPlaying) return;
+  if (!heroPlayerReady || !heroPlayer) return;
 
   window.clearInterval(heroLoopInterval);
   heroLoopInterval = window.setInterval(() => {
@@ -219,33 +219,26 @@ function keepHeroClipLooping() {
   }, 500);
 }
 
-function stopHeroLooping() {
-  window.clearInterval(heroLoopInterval);
-}
-
-function playHeroAudio() {
+function unmuteHeroAudio() {
   if (!heroPlayerReady || !heroPlayer) {
     return;
   }
 
   heroPlayer.unMute();
   heroPlayer.setVolume?.(75);
-  heroPlayer.seekTo(HERO_CLIP_START, true);
   heroPlayer.playVideo();
   heroAudioPlaying = true;
-  keepHeroClipLooping();
   updateHeroAudioUI();
 }
 
-function pauseHeroAudio() {
+function muteHeroAudio() {
   if (!heroPlayerReady || !heroPlayer) {
     return;
   }
 
-  heroPlayer.pauseVideo();
   heroPlayer.mute();
+  heroPlayer.playVideo();
   heroAudioPlaying = false;
-  stopHeroLooping();
   updateHeroAudioUI();
 }
 
@@ -262,11 +255,14 @@ function fallbackHeroAudioControl() {
 function onHeroPlayerReady(event) {
   heroPlayerReady = true;
   event.target.mute();
+  event.target.seekTo(HERO_CLIP_START, true);
+  event.target.playVideo();
+  keepHeroClipLooping();
   updateHeroAudioUI();
 }
 
 function onHeroPlayerStateChange(event) {
-  if (!window.YT || event.data !== window.YT.PlayerState.ENDED || !heroAudioPlaying) return;
+  if (!window.YT || event.data !== window.YT.PlayerState.ENDED) return;
   heroPlayer.seekTo(HERO_CLIP_START, true);
   heroPlayer.playVideo();
 }
@@ -306,9 +302,9 @@ heroAudioToggle?.addEventListener('click', () => {
   }
 
   if (heroAudioPlaying) {
-    pauseHeroAudio();
+    muteHeroAudio();
   } else {
-    playHeroAudio();
+    unmuteHeroAudio();
   }
 });
 
