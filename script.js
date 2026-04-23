@@ -183,11 +183,13 @@ const heroAudioNote = document.getElementById('hero-audio-note');
 const HERO_VIDEO_ID = 'cHuqhQmc4ok';
 const HERO_CLIP_START = 270;
 const HERO_CLIP_END = 310;
+const HERO_DEFAULT_VOLUME = 75;
 let currentMode = 'beginner';
 let heroPlayer;
 let heroPlayerReady = false;
-let heroAudioPlaying = false;
+let heroAudioPlaying = true;
 let heroLoopInterval;
+let heroAutoplayFallbackTimer;
 
 function renderRooms() {
   if (!roomsGrid) return;
@@ -297,8 +299,8 @@ function updateHeroAudioUI() {
   heroAudioToggle.classList.toggle('is-playing', heroAudioPlaying);
   if (heroAudioNote) {
     heroAudioNote.textContent = heroAudioPlaying
-      ? 'The hero clip is playing with sound. Tap to mute it.'
-      : 'The hero video auto-plays muted. Tap to hear the clip.';
+      ? 'The hero clip starts with sound when the browser allows autoplay. Tap to mute it.'
+      : 'The hero clip is muted. Tap to hear it.';
   }
 }
 
@@ -307,15 +309,21 @@ function keepHeroClipLooping() {
   window.clearInterval(heroLoopInterval);
   heroLoopInterval = window.setInterval(() => {
     const currentTime = heroPlayer.getCurrentTime?.();
-    if (typeof currentTime === 'number' && currentTime >= HERO_CLIP_END - 0.35) {
+    if (typeof currentTime !== 'number') return;
+    if (currentTime < HERO_CLIP_START - 0.5 || currentTime >= HERO_CLIP_END - 0.35) {
       heroPlayer.seekTo(HERO_CLIP_START, true);
       heroPlayer.playVideo();
+      if (heroAudioPlaying) {
+        heroPlayer.unMute?.();
+        heroPlayer.setVolume?.(HERO_DEFAULT_VOLUME);
+      }
     }
-  }, 500);
+  }, 350);
 }
 
 function muteHeroAudio() {
   if (!heroPlayerReady || !heroPlayer) return;
+  window.clearTimeout(heroAutoplayFallbackTimer);
   heroPlayer.mute();
   heroPlayer.playVideo();
   heroAudioPlaying = false;
@@ -324,11 +332,33 @@ function muteHeroAudio() {
 
 function unmuteHeroAudio() {
   if (!heroPlayerReady || !heroPlayer) return;
+  window.clearTimeout(heroAutoplayFallbackTimer);
   heroPlayer.unMute();
-  heroPlayer.setVolume?.(75);
+  heroPlayer.setVolume?.(HERO_DEFAULT_VOLUME);
   heroPlayer.playVideo();
   heroAudioPlaying = true;
   updateHeroAudioUI();
+}
+
+function attemptHeroAutoplayWithSound() {
+  if (!heroPlayerReady || !heroPlayer) return;
+  window.clearTimeout(heroAutoplayFallbackTimer);
+  heroPlayer.seekTo(HERO_CLIP_START, true);
+  heroPlayer.unMute?.();
+  heroPlayer.setVolume?.(HERO_DEFAULT_VOLUME);
+  heroPlayer.playVideo();
+  heroAudioPlaying = true;
+  updateHeroAudioUI();
+
+  heroAutoplayFallbackTimer = window.setTimeout(() => {
+    const state = heroPlayer.getPlayerState?.();
+    if (state !== window.YT?.PlayerState?.PLAYING) {
+      muteHeroAudio();
+      if (heroAudioNote) {
+        heroAudioNote.textContent = 'Your browser blocked autoplay with sound, so the clip fell back to muted. Tap to unmute it.';
+      }
+    }
+  }, 1400);
 }
 
 function fallbackHeroAudioControl() {
@@ -342,10 +372,9 @@ function fallbackHeroAudioControl() {
 
 function onHeroPlayerReady(event) {
   heroPlayerReady = true;
-  event.target.mute();
   event.target.seekTo(HERO_CLIP_START, true);
-  event.target.playVideo();
   keepHeroClipLooping();
+  attemptHeroAutoplayWithSound();
 }
 
 function onYouTubeIframeAPIReady() {
